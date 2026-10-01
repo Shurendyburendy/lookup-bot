@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: lookup-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python lookup_bot.py
+    healthCheckPath: /health
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: GUILD_ID
+        value: 1549144439782506607
+      - key: RULES_CHANNEL_ID
+        value: 1555156623603798036
+      - key: RULES_ROLE_ID
+        value: 1553528202939334786
+      - key: PYTHON_VERSION
+        value: 3.11.0
